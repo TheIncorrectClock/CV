@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4>Professional Experience</h4>
+    </div>
+  </div>
+  <div *ngFor="let exp of getExperience()">
+    <div class="row">
+      <div *ngIf="exp.to" class="col-3">{{exp.from | date:'MM/yyyy'}} - {{exp.to | date:'MM/yyyy'}}</div>
+      <div *ngIf="exp.to == undefined" class="col-3">Since {{exp.from | date:'MM/yyyy'}}</div>
+      <div class="col-9"><b>{{exp.name}}</b></div>
+    </div>
+    <div *ngFor="let pos of exp.positions">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-9"><i>{{pos.title}}</i></div>
+      </div>
+    </div>
+    <br>
+  </div>
+</div>

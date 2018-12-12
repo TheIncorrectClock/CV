@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h4>Education</h4>
+    </div>
+  </div>
+  <div *ngFor="let edu of getEducation()">
+    <div class="row">
+      <div class="col-3">{{edu.from | date:'MM/yyyy'}} - {{edu.to | date:'MM/yyyy'}}</div>
+      <div class="col-9"><b>{{edu.name}}</b></div>
+    </div>
+    <div class="row">
+      <div class="col-3"></div>
+      <div class="col-9"><i>{{edu.course}}</i></div>
+    </div>
+    <ul>
+    <div *ngFor="let specialization of edu.specializations">
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-9">
+          <li>{{specialization}}</li>
+        </div>
+      </div>
+    </div>
+    </ul>
+    <br>
+  </div>
+</div>
